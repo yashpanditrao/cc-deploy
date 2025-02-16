@@ -10,7 +10,12 @@ class Settings(BaseSettings):
     VERSION: str = "1.0.0"
     
     # CORS settings
-    CORS_ORIGINS: list = ["http://localhost:5173", "http://127.0.0.1:5173", "https://cc-deploy-pi.vercel.app"]
+    CORS_ORIGINS: list = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://cc-deploy-pi.vercel.app",
+        "https://*.onrender.com"
+    ]
     CORS_CREDENTIALS: bool = True
     CORS_METHODS: list = ["*"]
     CORS_HEADERS: list = ["*"]

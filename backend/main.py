@@ -290,15 +290,10 @@ async def update_profile_embeddings(profile_id: str):
 async def update_profile_ai_bio(profile_id: str):
     """Update AI bio and its embedding for a specific profile"""
     try:
-        updates = update_single_profile_ai_bio(profile_id)
-        if not updates:
-            raise HTTPException(status_code=400, detail="Failed to generate AI bio")
-        return {
-            "message": "Profile AI bio updated successfully",
-            "data": updates
-        }
+        return await update_single_profile_ai_bio(profile_id, supabase)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port_number = int(os.getenv("PORT", "8000"))
+    uvicorn.run("main:app", host="0.0.0.0", port=port_number, reload=True)
