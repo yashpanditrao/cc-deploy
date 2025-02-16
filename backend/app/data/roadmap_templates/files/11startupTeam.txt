@@ -1,0 +1,58 @@
+H1 Tags:
+What does an ideal startup team look like?
+
+H2 Tags:
+Attributes of successful startup teams
+Task: Identify strengths and weaknesses on your team
+Core roles in startup teams
+Founder, employee, or contractor
+Task: Evaluate resourcing requirements
+Feedback
+
+P Tags:
+This browser is no longer supported.
+Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+It's important to consider the value of teams versus sole founders. Startups are often started by a sole founder. But before long, most sole founders realize that having a team is critical to the success of their company. Hiring a team doesn't just help manage the volume of work, but also helps tap into a broad range of skills and perspectives. Being part of a team also provides moral support.
+In this unit, we're going to talk about startup teams. We'll first look at the personal attributes that are highly correlated with success in startup teams. We'll then consider functional roles and how to ensure that they're filled at the right time.
+This section lists important attributes that should exist within every startup founding team. It's not essential (or likely) that every team member will have all these attributes, but it's highly desirable that each of the attributes exists somewhere within the team.
+It's also important to look for these attributes in early employees, because they tend to correlate with high performance. Also, it's vital to have a good cultural alignment between founders and key employees.
+Curious founders are genuinely interested in understanding problems. Curiosity leads to solutions that better meet customer needs.
+Founders who have this attribute:
+Startups that deeply understand the domain in which they're operating are more likely to have important insights that are invisible to others.
+Founders who have this attribute:
+When combined with broad curiosity, this attribute can lead to T-shaped skills in which the person has a formidable combination of breadth and depth.
+Speed of execution and rapid iteration are important competitive advantages in any startup.
+Founders who have this attribute:
+Startup founders need to be able to persist despite challenges and setbacks.
+Founders who have this attribute:
+This attribute is often closely connected with high levels of optimism.
+Successful startup founders understand objectively that most startups fail, yet they have sufficient optimism that they're willing to back themselves to succeed.
+Founders who have this attribute:
+Startups don't follow a linear trajectory, so it's important to be able to pivot and scrap plans when initial assumptions turn out to be invalid.
+Founders who have this attribute:
+Startup founders need to be able to maintain a good working relationship, even in a chaotic and stressful environment.
+Founders who have this attribute (also known as emotional quotient or EQ):
+If you're already part of a team, consider each team member's strengths and weaknesses in relation to these attributes. Are any attributes conspicuously absent?
+If you're a sole founder, consider your own strengths and weaknesses and identify any gaps. This information will be useful to have in mind as you think about who else to bring into your team.
+Let's now look at the core functional roles that need to be filled in a startup. Because every startup is different, you'll have your own ideas about the specific roles that you need to fill in your company.
+The following table lists broad functional roles that need to be filled in most early-stage startup teams. In the early days, it's not essential (and often not possible) to have a one-to-one mapping of an individual to a role. One person might have multiple roles, and roles might be split across individuals.
+However, it's critical to make sure that every member of the team is clear on which functional roles they're responsible for. You also must make sure that all roles are covered, or that you have a plan for how to cover them as you grow your team.
+Startup founders often struggle with the question of whether they should bring in another cofounder, hire an employee, or outsource tasks to a contractor.
+There are no absolutely right or wrong answers to this question, but let's review some practical considerations.
+If you're a sole founder, or on a small founding team, you might decide to try to fill gaps in skill sets by bringing in another cofounder.
+If your startup is still at the idea stage, this might be a great option. If you bring in someone at (or close to) the beginning of the journey, they'll be able to help you with crucial tasks like developing hypotheses, interviewing customers, running experiments, developing your value proposition, naming the company, and building and launching an MVP. Because they've joined before any real value has been created, there's a good chance they'll feel like a cofounder and make a serious commitment to the company, even though they didn't come up with the initial idea.
+Successful founding teams frequently have an existing strong relationship between cofounders, sometimes developed over years of working together in other settings. When cofounders already know each other well, it's common for them to have worked out how to:
+Therefore, a good place to start your cofounder search is in your existing network.
+If you don't have a potential cofounder in your existing network, you might choose to seek out potential cofounders through networking events or online matchmaking services. Bear in mind that bringing a cofounder into your company is a little like marriage. It's generally a good idea to build a relationship with the person over a long period of time before asking them to make a long-term commitment.
+Sometimes the best approach is to invite the person to work with you on a specific task, paid if necessary. Use this as an opportunity to evaluate their fit. It's generally not a good idea to offer them any equity at this point.
+If you've been working on your startup for a while, and especially if you've already launched a product, the idea of bringing in a cofounder can be less straightforward. Anyone who joins as a cofounder at this point will likely face the question of whether they're genuinely a founder. You and any other original founders might be viewed as having a different status.
+Late-joining cofounders are often offered a lower-equity stake than the initial founders in an attempt to reconcile the fact that they weren't involved in coming up with the idea or taking the first steps to pursue it. As a result, their level of commitment can be considerably lower. This can lead to tensions within the team.
+In these situations, you might be better off hiring an employee or a contractor.
+In the early days of most startups, there's limited funding to pay anyone. So the founders do most, if not all, of the work.
+After the company has funding, from either customer revenues or external investment, you'll be in a position to hire employees or contractors and begin scaling the company's operations.
+Tip
+Don't wait until you're ready to recruit to start looking for candidates. Start building a wish list of possible candidates and cultivate your relationships with them as early as possible. By staying in touch and keeping them informed about the progress you're making in your company, you'll be in a much stronger position to find and hire the right person quickly when you have the need and the funding.
+Here are some pros and cons of bringing in a cofounder versus hiring employees or contractors.
+Briefly map out the resourcing requirements for your startup over the coming 12 months. Consider the functional roles that might need to be filled, and whether they're best filled by a contractor, an employee, or a cofounder.
+Consider any candidates that you already know and assess their fit based on whether you believe they have some of the attributes that we discussed earlier.
+Was this page helpful?
