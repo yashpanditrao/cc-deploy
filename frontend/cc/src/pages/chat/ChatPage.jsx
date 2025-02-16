@@ -25,7 +25,7 @@ const ChatPage = () => {
   const handleSearch = async (query) => {
     try {
       setIsSearching(true);
-      const response = await fetch('http://localhost:8000/search', {
+      const response = await fetch('https://cc-deploy-8heq.onrender.com/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

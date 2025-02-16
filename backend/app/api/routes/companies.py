@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.api.models.company import CompanyProfileBase
+from pydantic import BaseModel
+from typing import Optional
 from app.core.config import settings
 from app.services.embeddings import get_embedding, update_single_company_embeddings
 from supabase import create_client
@@ -7,27 +8,28 @@ from supabase import create_client
 router = APIRouter()
 supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
-@router.post("")
+class CompanyProfileBase(BaseModel):
+    name: str
+    description: Optional[str]
+    industry: Optional[str]
+    website: Optional[str]
+    founded_year: Optional[int]
+    location: Optional[str]
+
+@router.post("/")
 async def create_company(company: CompanyProfileBase):
     try:
         # Store company data in Supabase
         company_dict = company.dict()
-        result = supabase.table("companyprofile").insert(company_dict).execute()
         
-        if not result.data:
-            raise HTTPException(status_code=500, detail="Failed to create company")
+        # Generate embedding for company description if available
+        if company.description:
+            description_embedding = get_embedding(company.description)
+            if description_embedding:
+                company_dict['description_vector'] = description_embedding
         
-        # Get the created company's ID
-        company_id = result.data[0]['id']
-        
-        # Generate embeddings for the new company
-        embeddings = update_single_company_embeddings(company_id)
-        
-        return {
-            "message": "Company created successfully with embeddings",
-            "data": result.data[0],
-            "embeddings": embeddings
-        }
+        result = supabase.table("CompanyProfile").insert(company_dict).execute()
+        return {"message": "Company created successfully", "data": result.data}
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

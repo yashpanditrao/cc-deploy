@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.api.models.profile import PersonalProfileBase
+from pydantic import BaseModel, EmailStr
+from typing import List, Optional
 from app.core.config import settings
 from app.services.embeddings import update_single_profile_embeddings, update_single_profile_ai_bio
 from supabase import create_client
@@ -7,7 +8,18 @@ from supabase import create_client
 router = APIRouter()
 supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
-@router.post("")
+class PersonalProfileBase(BaseModel):
+    name: str
+    email: EmailStr
+    phone: Optional[str]
+    bio: Optional[str]
+    role: str
+    linkedin_url: Optional[str]
+    education: Optional[str]
+    company_id: Optional[str]
+    interests: Optional[List[str]]
+
+@router.post("/")
 async def create_profile(profile: PersonalProfileBase):
     try:
         # First create the profile without embeddings
@@ -43,7 +55,7 @@ async def update_profile_embeddings(profile_id: str):
         embeddings = update_single_profile_embeddings(profile_id)
         return {
             "message": "Profile embeddings updated successfully",
-            "data": embeddings
+            "embeddings": embeddings
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -52,12 +64,10 @@ async def update_profile_embeddings(profile_id: str):
 async def update_profile_ai_bio(profile_id: str):
     """Update AI bio and its embedding for a specific profile"""
     try:
-        updates = update_single_profile_ai_bio(profile_id)
-        if not updates:
-            raise HTTPException(status_code=400, detail="Failed to generate AI bio")
+        ai_bio = update_single_profile_ai_bio(profile_id)
         return {
             "message": "Profile AI bio updated successfully",
-            "data": updates
+            "ai_bio": ai_bio
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) 

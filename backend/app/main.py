@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.routes import profiles, companies, search
+from supabase import create_client
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -16,6 +17,12 @@ app.add_middleware(
     allow_credentials=settings.CORS_CREDENTIALS,
     allow_methods=settings.CORS_METHODS,
     allow_headers=settings.CORS_HEADERS,
+)
+
+# Initialize Supabase client
+supabase = create_client(
+    settings.SUPABASE_URL,
+    settings.SUPABASE_KEY
 )
 
 # Include routers
