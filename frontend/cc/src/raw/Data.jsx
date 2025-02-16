@@ -28,7 +28,8 @@ export default function Data() {
   const [comparison, setComparison] = useState(null);
   const [url, setUrl] = useState('');
   const [stage, setStage] = useState('Seed');
-  const [comparing, setComparing] = useState(false);
+  const [comparingStates, setComparingStates] = useState({});
+  const comparisonRef = useRef(null);
   
   // Chat state
   const [messages, setMessages] = useState([]);
@@ -199,7 +200,7 @@ export default function Data() {
 
   const compareWithCompetitor = async (competitorUrl) => {
     try {
-      setComparing(true);
+      setComparingStates(prev => ({ ...prev, [competitorUrl]: true }));
       const response = await fetch(`${API_BASE_URL}/compare`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -211,10 +212,14 @@ export default function Data() {
       if (!response.ok) throw new Error('Comparison failed');
       const comparisonData = await response.json();
       setComparison(comparisonData);
+      // Scroll to comparison results after they load
+      setTimeout(() => {
+        comparisonRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } catch (err) {
       setError(err.message);
     } finally {
-      setComparing(false);
+      setComparingStates(prev => ({ ...prev, [competitorUrl]: false }));
     }
   };
 
@@ -473,7 +478,7 @@ export default function Data() {
         )}
          {/* Comparison Results */}
          {comparison && (
-          <Card className="mb-6">
+          <Card className="mb-6" ref={comparisonRef}>
             <CardHeader>
               <CardTitle>Comparison Results</CardTitle>
               <CardDescription>
@@ -552,9 +557,9 @@ export default function Data() {
                           <Button 
                             variant="outline" 
                             onClick={() => compareWithCompetitor(competitor.link)}
-                            disabled={comparing}
+                            disabled={comparingStates[competitor.link]}
                           >
-                            {comparing ? (
+                            {comparingStates[competitor.link] ? (
                               <div className="flex items-center gap-2">
                                 <Loader2 className="h-4 w-4 animate-spin" />
                                 <span>Comparing...</span>
